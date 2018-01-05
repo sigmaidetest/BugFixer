@@ -1,10 +1,10 @@
-const ddb = new AWS.DynamoDB();
 let AWS = require('aws-sdk');
-
+const ddb = new AWS.DynamoDB.DocumentClient();
 exports.handler = function (event, context, callback) {
+
     ddb.get({
-        TableName: 'Invoice',
-        Key: { invoice_number: 'HOK', clienId_date: 'KARI' }
+        TableName: 'Tab',
+        Key: { xx: 'HELP' }
     }, function (err, data) {
         if (err) {
             //handle error
@@ -12,5 +12,6 @@ exports.handler = function (event, context, callback) {
             //your logic goes here
         }
     });
+
 
 }
